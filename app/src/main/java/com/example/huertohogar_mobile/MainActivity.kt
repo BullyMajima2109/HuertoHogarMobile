@@ -12,8 +12,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.core.view.WindowCompat
 import com.example.huertohogar_mobile.ui.theme.HuertoHogarTheme
 import com.example.huertohogar_mobile.ui.screens.AppScreen
+import com.example.huertohogar_mobile.ui.screens.ProductosBackendScreen
+
 
 class MainActivity : ComponentActivity() {
+
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +27,10 @@ class MainActivity : ComponentActivity() {
             val windowSizeClass = calculateWindowSizeClass(this)
 
             HuertoHogarTheme {
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
                     AppScreen(windowSizeClass = windowSizeClass)
                 }
             }
